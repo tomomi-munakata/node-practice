@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-const Hello = require('./Helloworld');
 const mysql = require('mysql')
 
 const con = mysql.createConnection({
@@ -18,7 +17,7 @@ const con = mysql.createConnection({
             con.query(sql, function (err, result, fields) {  
             if (err) throw err;
             res.send(result)
-            console.log('connect2');
+            console.log('connect');
             });
         });
         
@@ -33,5 +32,5 @@ const con = mysql.createConnection({
 });
 
 
-app.listen(1337);
+app.listen(4000);
 console.log('server liseten ...');
